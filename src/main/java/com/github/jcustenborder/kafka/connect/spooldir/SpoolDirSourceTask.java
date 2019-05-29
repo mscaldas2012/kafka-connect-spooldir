@@ -89,7 +89,7 @@ public abstract class SpoolDirSourceTask<CONF extends SpoolDirSourceConnectorCon
         timestamp = this.inputFileModifiedTime;
         break;
       case PROCESS_TIME:
-        timestamp = null;
+        timestamp = System.currentTimeMillis();
         break;
       default:
         throw new UnsupportedOperationException(
@@ -103,7 +103,7 @@ public abstract class SpoolDirSourceTask<CONF extends SpoolDirSourceConnectorCon
       long lineNumber = ++recordCount;
       lineNumber++; //Extra line for headers - assume is true, since I can't read it here!
       s.put("_rowNumber", lineNumber);
-      s.put("_processTime", this.inputFileModifiedTime);
+      s.put("_processTime", timestamp);
       s.put("_fileName", filename);
       s.put("_recordGUID", UUID.randomUUID().toString());
 

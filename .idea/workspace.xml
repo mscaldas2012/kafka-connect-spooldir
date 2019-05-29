@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c30d149-9100-4bee-aa97-2f1d38c4f4c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect-jars/kafka-connect-spooldir-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/connect-jars/kafka-connect-spooldir-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirSourceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirSourceTask.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirSourceTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="107" column="57" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
+            <state relative-caret-position="389">
+              <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -46,18 +48,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/connector.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="448" lean-forward="true" selection-start-line="15" selection-start-column="448" selection-end-line="15" selection-end-column="448" />
+              <caret line="15" column="319" selection-end-line="15" selection-end-column="499" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -127,8 +133,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirJsonSourceTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/elf/SpoolDirELFSourceTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/FileInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirSourceTask.java" />
         <option value="$PROJECT_DIR$/connector.txt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirSourceTask.java" />
       </list>
     </option>
   </component>
@@ -256,6 +263,32 @@
               <item name="kafka-connect-spooldir" type="462c0819:PsiDirectoryNode" />
               <item name="dropfiles" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="kafka-connect-spooldir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kafka-connect-spooldir" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kafka-connect-spooldir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kafka-connect-spooldir" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kafka-connect-spooldir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kafka-connect-spooldir" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kafka-connect-spooldir" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kafka-connect-spooldir" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spooldir" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -363,18 +396,17 @@
       <option name="presentableId" value="Default" />
       <updated>1558730568421</updated>
       <workItem from="1558730570611" duration="4948000" />
-      <workItem from="1558994427235" duration="8053000" />
+      <workItem from="1558994427235" duration="8910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13001000" />
+    <option name="totallyTimeSpent" value="13858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="559" y="39" width="2299" height="1400" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15595923" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15595923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -392,7 +424,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="SBT Console" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49977848" visible="true" weight="0.3299611" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49977848" visible="true" weight="0.3299611" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50022155" side_tool="true" weight="0.3299611" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -757,22 +789,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/jcustenborder/kafka/connect/spooldir/SpoolDirSourceTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="107" column="57" selection-start-line="107" selection-start-column="57" selection-end-line="107" selection-end-column="57" />
+        <state relative-caret-position="389">
+          <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connector.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="448" lean-forward="true" selection-start-line="15" selection-start-column="448" selection-end-line="15" selection-end-column="448" />
+          <caret line="15" column="319" selection-end-line="15" selection-end-column="499" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
