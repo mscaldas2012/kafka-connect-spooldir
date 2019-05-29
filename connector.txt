@@ -1,0 +1,16 @@
+connector.class=com.github.jcustenborder.kafka.connect.spooldir.SpoolDirCsvSourceConnector
+csv.first.row.as.header=true
+tasks.max=1
+halt.on.error=false
+parser.timestamp.date.formats=[MM/dd/yyyy]
+schema.generation.enabled=false
+csv.file.charset=UTF-8
+input.file.pattern=.*\.csv
+csv.separator.char=44
+timestamp.mode=FILE_TIME
+topic=teamMembers2
+input.path=/incoming
+finished.path=/processed
+error.path=/errors
+key.schema={"name":"gov.cdc.ncezid.eip.ds.model.TeamMemberKey","type":"STRUCT","isOptional":true,"fieldSchemas":{"email":{"type":"STRING","isOptional":false}}}
+value.schema={"name":"gov.cdc.ncezid.eip.ds.model.TeamMember","type":"STRUCT","isOptional":true,"fieldSchemas":{"email":{"type":"STRING","isOptional":false},"lastName":{"type":"STRING","isOptional":false},"firstName":{"type":"STRING","isOptional":true},"companyAge":{"type":"INT32","isOptional":true},"_recordGUID":{"type":"STRING","isOptional":false},"_fileName":{"type":"STRING","isOptional":true},"_processTime":{"type":"INT64","isOptional":true},"_rowNumber":{"type":"INT64","isOptional":true}}}

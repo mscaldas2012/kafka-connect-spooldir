@@ -81,7 +81,7 @@ public class SpoolDirELFSourceTask extends SpoolDirSourceTask<SpoolDirELFSourceC
   }
 
   @Override
-  protected List<SourceRecord> process() {
+  protected List<SourceRecord> process(String filename) {
     List<SourceRecord> records = new ArrayList<>(this.config.batchSize);
 
     LogEntry entry;
@@ -92,6 +92,7 @@ public class SpoolDirELFSourceTask extends SpoolDirSourceTask<SpoolDirELFSourceC
         final Struct valueStruct = converted.getValue();
 
         addRecord(
+            filename,
             records,
             new SchemaAndValue(keyStruct.schema(), keyStruct),
             new SchemaAndValue(valueStruct.schema(), valueStruct)

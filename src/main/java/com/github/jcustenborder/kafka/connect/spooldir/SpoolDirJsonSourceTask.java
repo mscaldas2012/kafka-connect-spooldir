@@ -78,7 +78,7 @@ public class SpoolDirJsonSourceTask extends SpoolDirSourceTask<SpoolDirJsonSourc
   }
 
   @Override
-  protected List<SourceRecord> process() {
+  protected List<SourceRecord> process(String filename) {
     List<SourceRecord> records = new ArrayList<>(this.config.batchSize);
 
     while (this.iterator.hasNext() && records.size() < this.config.batchSize) {
@@ -108,6 +108,7 @@ public class SpoolDirJsonSourceTask extends SpoolDirSourceTask<SpoolDirJsonSourc
       }
 
       addRecord(
+          filename,
           records,
           new SchemaAndValue(keyStruct.schema(), keyStruct),
           new SchemaAndValue(valueStruct.schema(), valueStruct)

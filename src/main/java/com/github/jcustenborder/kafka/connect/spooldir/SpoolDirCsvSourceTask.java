@@ -92,7 +92,7 @@ public class SpoolDirCsvSourceTask extends SpoolDirSourceTask<SpoolDirCsvSourceC
   }
 
   @Override
-  public List<SourceRecord> process() throws IOException {
+  public List<SourceRecord> process(String filename) throws IOException {
     List<SourceRecord> records = new ArrayList<>(this.config.batchSize);
 
     while (records.size() < this.config.batchSize) {
@@ -116,9 +116,11 @@ public class SpoolDirCsvSourceTask extends SpoolDirSourceTask<SpoolDirCsvSourceC
         try {
           Field field = this.config.valueSchema.field(fieldName);
           if (null != field) {
-            fieldValue = this.parser.parseString(field.schema(), input);
-            log.trace("process() - output = '{}'", fieldValue);
-            valueStruct.put(field, fieldValue);
+            if (!field.name().startsWith("_")) {
+              fieldValue = this.parser.parseString(field.schema(), input);
+              log.trace("process() - output = '{}'", fieldValue);
+              valueStruct.put(field, fieldValue);
+            }
           } else {
             log.trace("process() - Field {} is not defined in the schema.", fieldName);
           }
@@ -139,6 +141,7 @@ public class SpoolDirCsvSourceTask extends SpoolDirSourceTask<SpoolDirCsvSourceC
       }
 
       addRecord(
+              filename,
           records,
           new SchemaAndValue(keyStruct.schema(), keyStruct),
           new SchemaAndValue(valueStruct.schema(), valueStruct)

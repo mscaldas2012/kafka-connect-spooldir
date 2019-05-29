@@ -106,7 +106,7 @@ public abstract class AbstractSourceTask<CONF extends AbstractSourceConnectorCon
 
   protected abstract void configure(InputStream inputStream, Map<String, String> metadata, Long lastOffset) throws IOException;
 
-  protected abstract List<SourceRecord> process() throws IOException;
+  protected abstract List<SourceRecord> process(String fileName) throws IOException;
 
   protected abstract long recordOffset();
 
@@ -262,7 +262,7 @@ public abstract class AbstractSourceTask<CONF extends AbstractSourceConnectorCon
         processingTime.reset();
         processingTime.start();
       }
-      List<SourceRecord> records = process();
+      List<SourceRecord> records = process(this.inputFile.getName());
       this.hasRecords = !records.isEmpty();
       return records;
     } catch (Exception ex) {

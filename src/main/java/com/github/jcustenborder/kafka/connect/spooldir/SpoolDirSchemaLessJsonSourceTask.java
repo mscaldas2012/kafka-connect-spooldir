@@ -56,7 +56,7 @@ public class SpoolDirSchemaLessJsonSourceTask extends AbstractSourceTask<SpoolDi
   }
 
   @Override
-  protected List<SourceRecord> process() throws IOException {
+  protected List<SourceRecord> process(String filename) throws IOException {
     int recordCount = 0;
     List<SourceRecord> records = new ArrayList<>(this.config.batchSize);
     while (recordCount < this.config.batchSize && this.nodeIterator.hasNext()) {

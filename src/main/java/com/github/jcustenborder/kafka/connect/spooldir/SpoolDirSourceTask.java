@@ -33,10 +33,13 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public abstract class SpoolDirSourceTask<CONF extends SpoolDirSourceConnectorConfig> extends AbstractSourceTask<CONF> {
   static final Logger log = LoggerFactory.getLogger(SpoolDirSourceTask.class);
   protected Parser parser;
+
+  //protected FileInfo fileInfo;
 
   @Override
   public void start(Map<String, String> settings) {
@@ -52,9 +55,10 @@ public abstract class SpoolDirSourceTask<CONF extends SpoolDirSourceConnectorCon
     for (Map.Entry<Schema, TypeParser> kvp : dateTypeParsers.entrySet()) {
       this.parser.registerTypeParser(kvp.getKey(), kvp.getValue());
     }
+
   }
 
-  protected void addRecord(List<SourceRecord> records, SchemaAndValue key, SchemaAndValue value) {
+  protected void addRecord(String filename, List<SourceRecord> records, SchemaAndValue key, SchemaAndValue value) {
 
     if (this.config.hasKeyMetadataField && !SchemaAndValue.NULL.equals(key)) {
       final Struct keyStruct = (Struct) key.value();
@@ -64,7 +68,11 @@ public abstract class SpoolDirSourceTask<CONF extends SpoolDirSourceConnectorCon
     final Struct valueStruct;
     if (this.config.hasvalueMetadataField && !SchemaAndValue.NULL.equals(value)) {
       valueStruct = (Struct) value.value();
+//      fileInfo.setProcessTime(this.inputFileModifiedTime);
+//      fileInfo.setRowNumber(recordCount++);
+
       valueStruct.put(this.config.valueMetadataField, this.metadata);
+
     } else {
       valueStruct = null;
     }
@@ -89,14 +97,25 @@ public abstract class SpoolDirSourceTask<CONF extends SpoolDirSourceConnectorCon
         );
     }
 
-    //TODO: Comeback and add timestamp support.
+    //TODO-ing: Comeback and add timestamp support.
+    if (value != null && value.value() != null) {
+      Struct s = (Struct) value.value();
+      long lineNumber = ++recordCount;
+      lineNumber++; //Extra line for headers - assume is true, since I can't read it here!
+      s.put("_rowNumber", lineNumber);
+      s.put("_processTime", this.inputFileModifiedTime);
+      s.put("_fileName", filename);
+      s.put("_recordGUID", UUID.randomUUID().toString());
 
+    } else {
+      log.info("@@@@@ - Value or value.value is NULL???");
+    }
     SourceRecord sourceRecord = record(
         key,
         value,
         timestamp
     );
-    recordCount++;
+   // recordCount++;
     records.add(sourceRecord);
   }
 
